@@ -1,0 +1,89 @@
+var image1;  
+var k;
+var image2;
+var l;
+function preload(){
+  image1= loadImage('Scooby.png');
+  image2= loadImage('Shaggy.png');
+}
+function setup() {
+  createCanvas(400, 400);
+  k = new Scooby();
+  l = new Shaggy();
+}
+
+function draw() {
+  background(220);
+  k.mostrar();
+  if(keyIsPressed& keyCode == RIGHT_ARROW){
+    k.derecha();
+  }
+   if(keyIsPressed& keyCode == LEFT_ARROW){
+    k.izquierda();
+  }
+   if(keyIsPressed& keyCode == UP_ARROW){
+    k.arriba();
+  }
+   if(keyIsPressed& keyCode == DOWN_ARROW){
+    k.abajo();
+  }
+   l.mostrar();
+  if(keyIsPressed& keyCode == 100){
+    l.derecha();
+  }
+   if(keyIsPressed& keyCode == 97){
+    l.izquierda();
+  }
+   if(keyIsPressed& keyCode == 119){
+    l.arriba();
+  }
+   if(keyIsPressed& keyCode == 115){
+    l.abajo();
+  }
+}
+ 
+ class Scooby{
+  constructor() {
+    this.x = width / 2;
+    this.y = height / 2;
+  }
+  derecha() {
+    this.x++;
+  }
+  izquierda() {
+    this.x--;
+  }
+  arriba() {
+    this.y--;
+  }
+  abajo() {
+    this.y++;
+  }
+  mostrar() {
+    imageMode(CENTER);
+    image(image1, this.x, this.y, 190, 190);
+  }
+}
+
+class Shaggy {
+  constructor() {
+    this.x = width / 2;
+    this.y = height / 2;
+  }
+  derecha() {
+    this.x++;
+  }
+  izquierda() {
+    this.x--;
+  }
+  arriba() {
+    this.y--;
+  }
+  abajo() {
+    this.y++;
+  }
+  mostrar() {
+    imageMode(CENTER);
+    image(image2, this.x, this.y, 290, 290);
+  }
+}
